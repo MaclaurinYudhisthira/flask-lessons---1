@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}New Page | Flask App{% endblock %}
+{% block content %}
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="bg-success">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<div class="container justify-content-center">
+    <h1 class="display-4">Welcome {{name}}</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta officia unde, aperiam magnam rerum possimus? Aliquam.</p>
+    <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    <a href="/logout" class="btn btn-primary">Logout</a>
+    {% if email==None %}
+    <p class="lead bg-warning">Update Email</p>
+    {% endif %}
+    <form action="#" method="POST">
+        <input type="email" placeholder="Enter your email" value="email if email">
+        <input type="submit" value="Update" class="btn btn-warning">
+    </form>
+    <img src="https://www.samsgroupbd.net/images/about.gif" alt="About Image" class="image-fluid" >
+</div>
+{% endblock %}

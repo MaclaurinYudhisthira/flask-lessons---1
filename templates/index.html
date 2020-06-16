@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Home | Flask App{% endblock %}
+{% block content %}
+  <h1>Welcome {{fname}} {{lname}}</h1>
+  <br />
+  <hr />
+  pythoncode: {% for x in range(10)%}
+  <p>
+      Hello in loop {{x}} {% if x%2==0:%} {{"Even"}} {% else:%} {{"Odd"}} {% endif
+      %}
+  </p>
+  {% endfor %} 
+{% endblock %}
